@@ -20,9 +20,65 @@ describe('controllers/officesController', () => {
 
         expect(offices).toEqual(JSON.parse(JSON.stringify(officesData)));
     });
+/*
+    it('get once', async () => {
+        expect.assertions(1);
 
-    
+        const offices = await helper.getOffices();
+        let officeId = offices.findIndex((office) => office.title === 'Greenberg');
 
+        const hero = await helper.getOffice(officeId);
+
+        expect(hero).toEqual(offices[officeId]);
+    });
+
+    it('create office', async () => {
+        expect.assertions(1);
+
+        const data = {
+            title: 'TUT.BY',
+            website: 'https://www.tut.by',
+            address: 'Minsk'
+        };
+
+        const office = await helper.createOffice(data);
+        const offices = await helper.getOffices();
+
+        expect(data).toMatchObject(office);
+        expect(offices).toContainEqual(expect.objectContaining(office));
+    });
+
+    it('update office', async () => {
+        expect.assertions(1)
+
+        let offices = await helper.getOffices();
+
+        const item = offices.find((office) => office.title === 'Just Bea');
+        let officeId = offices.findIndex((office) => office.title === 'Just Bea');
+
+        item.address = '7758 Mauris Rd.';
+
+        await helper.updateOffice(officeId, item);
+        offices = await helper.getOffices();
+
+        expect(offices).toContainEqual(expect.objectContaining(item));
+    });
+
+    it('delete office', async () => {
+        expect.assertions(1);
+
+        let offices = await helper.getOffices();
+
+        const item = offices.find((office) => office.title === 'Just Bea');
+        let officeId = offices.findIndex((office) => office.title === 'Just Bea');
+
+        await helper.deleteOffice(officeId);
+
+        offices = await helper.getOffices();
+
+        expect(offices).not.toContainEqual(expect.objectContaining(item));
+    });
+*/
     // it('read agents', async () => {
     //     expect.assertions(1);
 
