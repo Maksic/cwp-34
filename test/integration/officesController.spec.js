@@ -29,11 +29,11 @@ describe('controllers/officesController', () => {
 
         const hero = await helper.getOffice(officeId);
 
-        return expect(hero).toEqual(offices[officeId]);
+        expect(hero).toEqual(offices[officeId]);
     });
 
     it('create office', async () => {
-        expect.assertions(2);
+        expect.assertions(1);
 
         const data = {
             title: 'TUT.BY',
